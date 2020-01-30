@@ -1,7 +1,7 @@
 CREATE TABLE meals (id SERIAL PRIMARY KEY, name varchar(100), recipe_url varchar(100),
 servings int, prep_time int);
 
-CREATE TABLE meal_plans (id SERIAL PRIMARY KEY, monday int REFERENCES meals(id),
+CREATE TABLE meal_plans (id SERIAL PRIMARY KEY, name varchar(100),  monday int REFERENCES meals(id),
 tuesday int REFERENCES meals(id), wednesday int REFERENCES meals(id), thursday int REFERENCES meals(id),
 friday int REFERENCES meals(id), saturday int REFERENCES meals(id), sunday int REFERENCES meals(id));
 
