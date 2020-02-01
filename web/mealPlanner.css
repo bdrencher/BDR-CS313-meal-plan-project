@@ -4,5 +4,6 @@ img {
 }
 
 header {
-    
+    display: flexbox;
+    flex-direction: row;
 }
