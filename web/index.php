@@ -9,12 +9,26 @@
     </head>
     
     <header>
-        <img src="logo.jpg" alt="logo for meal planner">
-        <h1 id="headline">Meal Planner</h1>
+        <div>
+            <img src="logo.jpg" alt="logo for meal planner">
+        </div>
+        <div>
+            <h1 id="headline">Meal Planner</h1>
+        </div>
     </header>
 
     <body>
+    <!-- flex box for adding meals -->
+        <div id="addAMeal">
+            <h3>Add a meal</h3>
+            <div id="addAMealFlex">
+
+            </div>
+        </div>
+
+    <!-- grid for meal plan -->
         <div id="gridOfDayBoxes">
+            <h3>Meal Plan Builder</h3>
             <div class="labelAndDay">
                 <p>Monday</p>
                 <div id="monday">
