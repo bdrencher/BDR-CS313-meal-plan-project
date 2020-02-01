@@ -22,8 +22,19 @@
         <div id="addAMeal">
             <h3>Add a meal</h3>
             <div id="addAMealFlex">
+                <label for="name">Name:</label>
+                <input type="text" id="name"><br>
 
+                <label for="servings">Servings:</label>
+                <input type="text" id="servings"><br>
+
+                <label for="prepTime">Preparation time (min):</label>
+                <input type="text" id="prepTime"><br>
+
+                <label for="url">Link to recipe:</label>
+                <input type="text" id="url"><br>
             </div>
+            <button id="addMealButton" onclick="addMeal()">Add</button>
         </div>
 
     <!-- grid for meal plan -->
