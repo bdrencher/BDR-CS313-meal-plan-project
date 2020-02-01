@@ -22,7 +22,7 @@
         </header>
 
         <div id="addAMeal">
-            <h3>Add a meal</h3>
+            <h3 style="margin-left=10%">Add a meal</h3>
             <div id="addAMealFlex">
                 <label for="name">Name:</label>
                 <input type="text" id="name"><br>

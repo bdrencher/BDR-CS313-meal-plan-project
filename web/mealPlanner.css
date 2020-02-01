@@ -21,6 +21,11 @@ header h1{
     max-width: 40%;
 }
 
+#mealPlanBuilderHeader {
+    margin-top: 2%;
+    margin-left: 10%;
+}
+
 #gridOfDayBoxes {
     display: grid;
     margin-top: 2%;
