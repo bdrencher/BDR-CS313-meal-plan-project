@@ -4,7 +4,11 @@ img {
 }
 
 header {
-    display: flexbox;
+    display: flex;
     flex-direction: row;
 }
 
+#addAMeal {
+    display: flex;
+    flex-direction: column;
+}
