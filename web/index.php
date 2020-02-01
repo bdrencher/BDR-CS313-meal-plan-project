@@ -7,18 +7,20 @@
         <link rel="stylesheet" href="mealPlanner.css" type="text/css">
         <title>Meal Planner - Ben Rencher</title>
     </head>
-    
-    <header>
-        <div>
-            <img src="logo.jpg" alt="logo for meal planner">
-        </div>
-        <div>
-            <h1 id="headline">Meal Planner</h1>
-        </div>
-    </header>
 
     <body>
     <!-- flex box for adding meals -->
+
+        
+        <header>
+            <div>
+                <img src="logo.jpg" alt="logo for meal planner">
+            </div>
+            <div>
+                <h1 id="headline">Meal Planner</h1>
+            </div>
+        </header>
+
         <div id="addAMeal">
             <h3>Add a meal</h3>
             <div id="addAMealFlex">
@@ -83,9 +85,9 @@
                 <button id="randomizeMealPlanButton" onclick="generateRandomPlan()">Generate random meal plan</button>
             </div>
         </div>
+
+        <footer>
+
+        </footer>
     </body>
-
-    <footer>
-
-    </footer>
 </html>
