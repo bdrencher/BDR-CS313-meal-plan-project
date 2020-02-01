@@ -40,6 +40,8 @@
     <!-- grid for meal plan -->
         <div id="gridOfDayBoxes">
             <h3>Meal Plan Builder</h3>
+            <label for="mealPlanName">Meal plan name:</label>
+            <input type="text" id="mealPlanNameInput"><br>
             <div class="labelAndDay">
                 <p>Monday</p>
                 <div id="monday">
@@ -74,6 +76,11 @@
             <p>Sunday</p>
                 <div id="sunday">
                 </div>
+            </div>
+            <div id="mealPlanButtons">
+                <button id="saveMealPlanButton" onclick="saveMealPlan()">Save meal plan</button>
+                <button id="loadMealPlanButton" onclick="loadMealPlan()">Load a meal plan</button>
+                <button id="randomizeMealPlanButton" onclick="generateRandomPlan()">Generate random meal plan</button>
             </div>
         </div>
     </body>
