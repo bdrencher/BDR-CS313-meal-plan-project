@@ -39,44 +39,46 @@
             <button id="addMealButton" onclick="addMeal()">Add</button>
         </div>
 
-    <!-- grid for meal plan -->
-        <div id="gridOfDayBoxes">
+        <div id="mealPlanBuilderHeader">
             <h3>Meal Plan Builder</h3>
             <label for="mealPlanName">Meal plan name:</label>
             <input type="text" id="mealPlanNameInput"><br>
+        </div>
+    <!-- grid for meal plan -->
+        <div id="gridOfDayBoxes">
             <div class="labelAndDay">
                 <p>Monday</p>
-                <div id="monday">
+                <div id="monday" class="mealBox">
                 </div>
             </div>
             <div class="labelAndDay">
             <p>Tuesday</p>
-                <div id="tuesday">
+                <div id="tuesday" class="mealBox">
                 </div>
             </div>
             <div class="labelAndDay">
             <p>Wednesday</p>
-                <div id="wednesday">
+                <div id="wednesday" class="mealBox">
                 </div>
             </div>
             <div class="labelAndDay">
             <p>Thursday</p>
-                <div id="monday">
+                <div id="monday" class="mealBox">
                 </div>
             </div>
             <div class="labelAndDay">
             <p>Friday</p>
-                <div id="friday">
+                <div id="friday" class="mealBox">
                 </div>
             </div>
             <div class="labelAndDay">
             <p>Saturday</p>
-                <div id="saturday">
+                <div id="saturday" class="mealBox">
                 </div>
             </div>
             <div class="labelAndDay">
             <p>Sunday</p>
-                <div id="sunday">
+                <div id="sunday" class="mealBox">
                 </div>
             </div>
             <div id="mealPlanButtons">

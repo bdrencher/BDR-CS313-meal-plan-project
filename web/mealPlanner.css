@@ -1,11 +1,11 @@
 img {
-   width: 25%;
-   height: auto;
+    float: left;
+    width: 5%;
+    height: auto;
 }
 
-header {
-    display: flex;
-    flex-direction: row;
+header h1{
+    align-content: center;
 }
 
 #addAMealFlex {
