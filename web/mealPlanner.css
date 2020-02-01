@@ -11,8 +11,6 @@ header h1{
 
 #addAMeal {
     padding-top: 2%;
-    margin-left:15%;
-    margin-right: 15%;
 }
 
 #addAMealFlex {
@@ -21,14 +19,6 @@ header h1{
     max-width: 40%;
 }
 
-#mealPlanBuilderHeader {
-    margin-top: 2%;
-    margin-left: 10%;
-}
-
 #gridOfDayBoxes {
     display: grid;
-    margin-top: 2%;
-    margin-left: 15%;
-    margin-right: 15%;
 }

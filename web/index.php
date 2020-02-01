@@ -22,7 +22,7 @@
         </header>
 
         <div id="addAMeal">
-            <h3 style="margin-left: 10%;">Add a meal</h3>
+            <h3>Add a meal</h3>
             <div id="addAMealFlex">
                 <label for="name">Name:</label>
                 <input type="text" id="name"><br>
@@ -42,7 +42,7 @@
         <div id="mealPlanBuilderHeader">
             <h3>Meal Plan Builder</h3>
             <label for="mealPlanName">Meal plan name:</label>
-            <input type="text" id="mealPlanNameInput" style="margin-left: 15%;"><br>
+            <input type="text" id="mealPlanNameInput"><br>
         </div>
     <!-- grid for meal plan -->
         <div id="gridOfDayBoxes">
