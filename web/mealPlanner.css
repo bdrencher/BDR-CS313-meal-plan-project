@@ -1,5 +1,5 @@
 img {
-   width: 50%;
+   width: 25%;
    height: auto;
 }
 
@@ -11,4 +11,9 @@ header {
 #addAMealFlex {
     display: flex;
     flex-direction: column;
+    max-width: 30%;
+}
+
+#gridOfDayBoxes {
+    display: grid;
 }
