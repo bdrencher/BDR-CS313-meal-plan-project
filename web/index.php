@@ -9,9 +9,8 @@
     </head>
 
     <body>
-    <!-- flex box for adding meals -->
 
-        
+    <!-- add a meal-->   
         <header>
             <div>
                 <img src="logo.jpg" alt="logo for meal planner">
@@ -44,7 +43,8 @@
             <label for="mealPlanName">Meal plan name:</label>
             <input type="text" id="mealPlanNameInput"><br>
         </div>
-    <!-- grid for meal plan -->
+
+    <!-- meal plan builder -->
         <div id="gridOfDayBoxes">
             <div class="labelAndDay">
                 <p>Monday</p>
