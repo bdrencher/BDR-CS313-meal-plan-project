@@ -58,8 +58,8 @@ header h1{
 }
 
 .mealBox {
-    min-width: 100px;
-    min-height: 100px;
+    min-width: auto;
+    min-height: auto;
     background-color: greenyellow;
     border-radius: 5%;
     border-color: lightblue;
