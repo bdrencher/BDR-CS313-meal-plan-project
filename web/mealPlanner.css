@@ -59,8 +59,8 @@ header h1{
 
 .mealBox {
 
-    width: 100px;
-    height: 100px;
+    width: 200px;
+    height: 125px;
     background-color: greenyellow;
     border-radius: 5%;
     border-color: lightblue;
