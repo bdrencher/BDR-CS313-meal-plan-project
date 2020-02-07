@@ -58,6 +58,8 @@ header h1{
 }
 
 .mealBox {
+    width: 3%;
+    height: 3%;
     border: 2px, red;
 }
 
