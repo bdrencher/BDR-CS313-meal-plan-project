@@ -61,9 +61,9 @@ header h1{
     min-width: 100px;
     min-height: 100px;
     background-color: greenyellow;
-    border: 3%;
     border-radius: 3%;
-    border-color: lightblue;
+    border-color: rgb(65, 137, 161);
+    border-width: 5px;
 }
 
 .labelAndDay {
