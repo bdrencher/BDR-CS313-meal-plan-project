@@ -60,7 +60,10 @@ header h1{
 .mealBox {
     min-width: 100px;
     min-height: 100px;
-    background-color: red;
+    background-color: greenyellow;
+    border: 5px;
+    border-radius: 2%;
+    border-color: lightblue;
 }
 
 .labelAndDay {
