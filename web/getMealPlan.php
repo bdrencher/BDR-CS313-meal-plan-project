@@ -25,5 +25,5 @@ $mealPlanData = $statement->fetch(PDO::FETCH_ASSOC);
 
 
 // echo json_encode($mealPlanArray);
-echo $mealPlanData;
+echo json_encode($mealPlanData);
 ?>
