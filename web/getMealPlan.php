@@ -9,16 +9,16 @@ function getMeal($mealID)
 
     if($mealID == NULL)
     {
-        return $dataArray = json_encode("No meal provided");
+        return array("no meal selected");
     }
-    $query = $mealDB->prepare('SELECT name, recipe_url, servings, prep_time FROM meals WHERE id=$mealID');
-    $query->execute();
+    $mealQuery = $mealDB->prepare('SELECT name, recipe_url, servings, prep_time FROM meals WHERE id=$mealID');
+    $mealQuery->execute();
 
-    $mealData = $query->fetch(PDO::FETCH_ASSOC);
+    $mealData = $mealQuery->fetch(PDO::FETCH_ASSOC);
 
     $dataArray = array($mealData['name'], $mealData['recipe_url'], $mealData['servings'], $mealData['prep_time']);
 
-    return json_encode($dataArray);
+    return $dataArray;
 } // end of getMeal
 
 
@@ -32,13 +32,13 @@ $mealPlanData = $query->fetch(PDO::FETCH_ASSOC);
 
 // get data for each meal
 $mealPlanName = $mealPlanData['name'];
-$monday       = json_decode(getMeal($mealPlanData['monday']));
-$tuesday      = json_decode(getMeal($mealPlanData['tuesday']));
-$wednesday    = json_decode(getMeal($mealPlanData['wednesday']));
-$thursday     = json_decode(getMeal($mealPlanData['thursday']));
-$friday       = json_decode(getMeal($mealPlanData['friday']));
-$saturday     = json_decode(getMeal($mealPlanData['saturday']));
-$sunday       = json_decode(getMeal($mealPlanData['sunday']));
+$monday       = getMeal($mealPlanData['monday']);
+$tuesday      = getMeal($mealPlanData['tuesday']);
+$wednesday    = getMeal($mealPlanData['wednesday']);
+$thursday     = getMeal($mealPlanData['thursday']);
+$friday       = getMeal($mealPlanData['friday']);
+$saturday     = getMeal($mealPlanData['saturday']);
+$sunday       = getMeal($mealPlanData['sunday']);
 
 // send data to front end
 $mealPlanArray = array($mealPlanName, $monday, $tuesday, $wednesday, $thursday, $friday, $saturday, $sunday);
