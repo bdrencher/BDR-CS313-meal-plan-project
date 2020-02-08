@@ -4,7 +4,7 @@ require "getMeal.php";
 session_start();
 $db = returnDB();
 
-$planID = $_GET['planID'];
+$planID = $_POST['planID'];
 
 $query = $db->prepare("SELECT name, monday, tuesday, wednesday, thursday, friday, saturday, sunday FROM meal_plans WHERE id=$planID");
 $query->execute();
