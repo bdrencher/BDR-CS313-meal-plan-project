@@ -1,7 +1,7 @@
 <?php
-// require "connectToDB.php";
-// require "getMeal.php";
-// $db = returnDB();
+require "connectToDB.php";
+require "getMeal.php";
+$db = returnDB();
 
 $planID = $_GET['planID'];
 
@@ -25,5 +25,5 @@ $planID = $_GET['planID'];
 
 
 // echo json_encode($mealPlanArray);
-echo json_encode("this is a string" + $planID);
+echo json_encode($planID);
 ?>
