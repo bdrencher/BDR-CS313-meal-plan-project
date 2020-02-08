@@ -11,7 +11,7 @@ $query->execute();
 $mealPlanData = $query->fetch(PDO::FETCH_ASSOC);
 
 $mealPlanName = $mealPlanData['name'];
-$monday       = json_decode(getMeal($mealPlanData['monday']));
+$monday       = json_decode(getMeal($mealPlanData['monday'], $db));
 // $tuesday      = json_decode(getMeal($mealPlanData['tuesday'], $db));
 // $wednesday    = json_decode(getMeal($mealPlanData['wednesday'], $db));
 // $thursday     = json_decode(getMeal($mealPlanData['thursday'], $db));
