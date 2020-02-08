@@ -1,9 +1,11 @@
 <?php
-function getMeal($mealID, $db)
+function getMeal($mealID)
 {
+    $db = returnDB();
+    
     if($mealID == NULL)
     {
-        return json_encode("No meal identified");
+        return $dataArray = json_encode("No meal provided");
     }
     $query = $db->prepare('SELECT name, recipe_url, servings, prep_time FROM $mealID');
     $query->execute();
