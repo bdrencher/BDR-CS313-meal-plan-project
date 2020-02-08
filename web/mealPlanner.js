@@ -12,5 +12,4 @@ function mealPlanRequest(mealPlanID)
 
     request.open("GET", "getMealPlan.php?planID=" + mealPlanID, true);
     request.send();
-    console.log("sent request");
 }
