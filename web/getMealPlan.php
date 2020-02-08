@@ -11,7 +11,7 @@ $query->execute();
 $mealPlanData = $query->fetch(PDO::FETCH_ASSOC);
 
 $mealPlanName = $mealPlanData['name'];
-$monday       = json_decode(getMeal($mealPlanData['monday']));
+// $monday       = json_decode(getMeal($mealPlanData['monday']));
 // $tuesday      = json_decode(getMeal($mealPlanData['tuesday'], $db));
 // $wednesday    = json_decode(getMeal($mealPlanData['wednesday'], $db));
 // $thursday     = json_decode(getMeal($mealPlanData['thursday'], $db));
@@ -24,6 +24,6 @@ $monday       = json_decode(getMeal($mealPlanData['monday']));
 $mealPlanArray = array($mealPlanName, $monday, $tuesday, $wednesday, $thursday, $friday, $saturday, $sunday);
 
 
-echo json_encode($monday);
+echo json_encode($mealPlanData['monday']);
 // echo json_encode($mealPlanName);
 ?>
