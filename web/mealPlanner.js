@@ -2,7 +2,7 @@ function mealPlanRequest(mealPlanID)
 {
     let request = new XMLHttpRequest();
 
-    request.onreadystatechange(function() {
+    request.onreadystatechange = function() {
         if(request.status == 200)
         {
             let data = JSON.parse(request.response);
@@ -12,7 +12,7 @@ function mealPlanRequest(mealPlanID)
         {
             console.log("something went wrong, status: " + response.status);
         }
-    })
+    };
 
     request.open("GET", "getMealPlan.php?planID=" + mealPlanID, true);
     request.send()
