@@ -1,6 +1,6 @@
 <?php
-require "connectToDB.php";
-require "getMeal.php";
+// require "connectToDB.php";
+// require "getMeal.php";
 // $db = returnDB();
 
 // $planID = $_GET['planID'];
