@@ -10,7 +10,7 @@ function mealPlanRequest(mealPlanID)
         }
         else
         {
-            console.log("something went wrong, status: " + response.status);
+            console.log("something went wrong, status: " + request.status);
         }
     };
 
