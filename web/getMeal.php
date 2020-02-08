@@ -5,6 +5,10 @@ $db = returnDB();
 
 function getMeal($mealID)
 {
+    if($mealID == NULL)
+    {
+        return $dataArray = array();
+    }
     $query = $db->prepare('SELECT name, recipe_url, servings, prep_time FROM $mealID');
     $query->execute();
 
@@ -12,6 +16,6 @@ function getMeal($mealID)
 
     $dataArray = array($mealData['name'], $mealData['recipe_url'], $mealData['servings'], $mealData['prep_time']);
 
-    echo json_encode($dataArray);
+    return json_encode($dataArray);
 }
 ?>
