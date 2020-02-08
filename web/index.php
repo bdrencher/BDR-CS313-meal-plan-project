@@ -88,7 +88,7 @@ $_SESSION['selectedMealPlan'] = array();
             </div>
             <div id="mealPlanButtons">
                 <button id="saveMealPlanButton" onclick="saveMealPlan()">Save meal plan</button>
-                <button id="loadMealPlanButton" onclick="loadMealPlan()">Load a meal plan</button>
+                <button id="loadMealPlanButton" onclick="mealPlanRequest(1)">Load a meal plan</button>
                 <button id="randomizeMealPlanButton" onclick="generateRandomPlan()">Generate random meal plan</button>
             </div>
         </div>
