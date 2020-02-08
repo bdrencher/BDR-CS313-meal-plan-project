@@ -1,7 +1,7 @@
 <?php
 require 'connectToDB.php';
 require 'getMeal.php';
-// $db = returnDB();
+$db = returnDB();
 
 $planID = $_GET['planID'];
 
