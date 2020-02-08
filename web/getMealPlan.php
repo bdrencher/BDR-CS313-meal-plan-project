@@ -1,7 +1,6 @@
 <?php
 require "connectToDB.php";
 require "getMeal.php";
-session_start();
 $db = returnDB();
 
 $planID = $_POST['planID'];
