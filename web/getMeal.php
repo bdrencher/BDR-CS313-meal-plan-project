@@ -12,6 +12,6 @@ function getMeal($mealID, $db)
 
     $dataArray = array($mealData['name'], $mealData['recipe_url'], $mealData['servings'], $mealData['prep_time']);
 
-    return json_encode($dataArray);
+    return json_encode("a string");
 }
 ?>
