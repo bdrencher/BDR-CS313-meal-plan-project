@@ -15,5 +15,5 @@ function mealPlanRequest(mealPlanID)
     };
 
     request.open("POST", "getMealPlan.php?planID=" + mealPlanID, true);
-    request.send()
+    request.send();
 }
