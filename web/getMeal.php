@@ -1,8 +1,6 @@
 <?php
-function getMeal($mealID)
+function getMeal($mealID, $db)
 {
-    $db = returnDB();
-
     if($mealID == NULL)
     {
         return $dataArray = json_encode("No meal provided");
