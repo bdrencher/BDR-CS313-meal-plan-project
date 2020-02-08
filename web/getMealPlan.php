@@ -23,8 +23,6 @@ $mealPlanName = $mealPlanData['name'];
 
 $mealPlanArray = array($mealPlanName, $monday, $tuesday, $wednesday, $thursday, $friday, $saturday, $sunday);
 
-$queryTwo = $db->prepare("SELECT name, recipe_url, servings, prep_time FROM meals WHERE id=1");
-$queryTwo->execute();
-echo json_encode($queryTwo->fetch(PDO::FETCH_ASSOC));
+echo json_encode($mealPlanArray);
 // echo json_encode($mealPlanName);
 ?>

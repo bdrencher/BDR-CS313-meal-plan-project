@@ -2,12 +2,12 @@
 function getMeal($mealID)
 {
     $db = returnDB();
-    
+
     if($mealID == NULL)
     {
         return $dataArray = json_encode("No meal provided");
     }
-    $query = $db->prepare('SELECT name, recipe_url, servings, prep_time FROM $mealID');
+    $query = $db->prepare('SELECT name, recipe_url, servings, prep_time FROM meals WHERE id=$mealID');
     $query->execute();
 
     $mealData = $query->fetch(PDO::FETCH_ASSOC);
