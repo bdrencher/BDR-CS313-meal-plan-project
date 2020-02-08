@@ -8,13 +8,9 @@ function mealPlanRequest(mealPlanID)
             let data = JSON.parse(request.response);
             console.log(data);
         }
-        else
-        {
-            console.log("something went wrong, status: " + request.status);
-        }
     };
 
-    request.open("POST", "getMealPlan.php?planID=" + mealPlanID, true);
+    request.open("GET", "getMealPlan.php?planID=" + mealPlanID, true);
     request.send();
     console.log("sent request");
 }

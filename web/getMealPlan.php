@@ -3,7 +3,7 @@ require "connectToDB.php";
 require "getMeal.php";
 $db = returnDB();
 
-// $planID = $_POST['planID'];
+$planID = $_GET['planID'];
 
 // $query = $db->prepare("SELECT name, monday, tuesday, wednesday, thursday, friday, saturday, sunday FROM meal_plans WHERE id=$planID");
 // $query->execute();
