@@ -3,7 +3,7 @@ function getMeal($mealID, $db)
 {
     if($mealID == NULL)
     {
-        return $dataArray = array();
+        return json_encode("No meal identified");
     }
     $query = $db->prepare('SELECT name, recipe_url, servings, prep_time FROM $mealID');
     $query->execute();
