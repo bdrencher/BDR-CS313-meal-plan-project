@@ -12,7 +12,7 @@ $db = returnDB();
         {
             return array("no meal selected");
         }
-        $mealQuery = $mealDB->prepare('SELECT name, recipe_url, servings, prep_time FROM meals WHERE id=$mealID');
+        $mealQuery = $mealDB->prepare("SELECT name, recipe_url, servings, prep_time FROM meals WHERE id=$mealID");
         $mealQuery->execute();
 
         $mealData = $mealQuery->fetch(PDO::FETCH_ASSOC);
@@ -69,5 +69,5 @@ $sundayData    = $sundayQuery->fetchall(PDO::FETCH_ASSOC);
 // send data to front end
 $mealPlanArray = array($mealPlanName, $mondayData, $tuesdayData, $wednesdayData, $thursdayData, $fridayData, $saturdayData, $sundayData);
 
-echo json_encode($mondayData);
+echo json_encode($mealPlanArray);
 ?>
