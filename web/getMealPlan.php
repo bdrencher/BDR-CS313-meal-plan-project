@@ -1,24 +1,25 @@
 <?php
 require 'connectToDB.php';
+require 'getMeal.php';
 $db = returnDB();
 
     /* getMeal will extract meal data once an appropriate id has been provided*/
     // This is not working right now, I'm not sure why
-    function getMeal($mealID)
-    {
-        $mealDB = returnDB();
+    // function getMeal($mealID)
+    // {
+    //     $mealDB = returnDB();
 
-        if($mealID == NULL)
-        {
-            return array("no meal selected");
-        }
-        $mealQuery = $mealDB->prepare("SELECT name, recipe_url, servings, prep_time FROM meals WHERE id=$mealID");
-        $mealQuery->execute();
+    //     if($mealID == NULL)
+    //     {
+    //         return array("no meal selected");
+    //     }
+    //     $mealQuery = $mealDB->prepare("SELECT name, recipe_url, servings, prep_time FROM meals WHERE id=$mealID");
+    //     $mealQuery->execute();
 
-        $mealData = $mealQuery->fetchall(PDO::FETCH_ASSOC);
+    //     $mealData = $mealQuery->fetchall(PDO::FETCH_ASSOC);
 
-        return $mealData;
-    } // end of getMeal
+    //     return $mealData;
+    // } // end of getMeal
 
 
 // Retrieve data from meal plan
@@ -31,13 +32,13 @@ $mealPlanData = $query->fetch(PDO::FETCH_ASSOC);
 
 // get data for each meal
 $mealPlanName = $mealPlanData['name'];
-$monday       = getMeal($mealPlanData['monday']);
-$tuesday      = getMeal($mealPlanData['tuesday']);
-$wednesday    = getMeal($mealPlanData['wednesday']);
-$thursday     = getMeal($mealPlanData['thursday']);
-$friday       = getMeal($mealPlanData['friday']);
-$saturday     = getMeal($mealPlanData['saturday']);
-$sunday       = getMeal($mealPlanData['sunday']);
+$monday       = getMeal($mealPlanData['monday'], $db);
+$tuesday      = getMeal($mealPlanData['tuesday'], $db);
+$wednesday    = getMeal($mealPlanData['wednesday'], $db);
+$thursday     = getMeal($mealPlanData['thursday'], $db);
+$friday       = getMeal($mealPlanData['friday'], $db);
+$saturday     = getMeal($mealPlanData['saturday'], $db);
+$sunday       = getMeal($mealPlanData['sunday'], $db);
 
 // I want to come back and write a more oop solution for this
 // $mondayQuery    = $db->prepare("SELECT name, recipe_url, servings, prep_time FROM meals WHERE id=$monday");
