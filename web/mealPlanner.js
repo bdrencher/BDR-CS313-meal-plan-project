@@ -23,7 +23,7 @@ function mealPlanRequest()
             {
                 // identify the day and data array that should be accessed
                 const day       = dayArray[i];
-                const dayData   = data[i + 1];
+                const dayData   = data[i + 1][0];
 
                 // collect information for output to screen
                 const name      = dayData['name'];
