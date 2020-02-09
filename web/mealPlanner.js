@@ -26,10 +26,10 @@ function mealPlanRequest()
                 const dayData   = data[i + 1];
 
                 // collect information for output to screen
-                const name      = dayData[0];
-                const recipeURL = dayData[1];
-                const servings  = dayData[2];
-                const prepTime  = dayData[3];
+                const name      = dayData['name'];
+                const recipeURL = dayData['recipe_url'];
+                const servings  = dayData['servings'];
+                const prepTime  = dayData['prep_time'];
                 
                 // push data to screen
                 day.innerHTML = "Name: " + name + "<br>recipe: " + recipeURL + "<br>servings: " + servings + "<br>prep time (min): " + prepTime;
