@@ -41,6 +41,9 @@ function populateMealPlans()
 
     // plan[0] should be meal plan id, plan[1] should be meal plan name
     for (const plan of mealPlans) {
+        console.log(plan);
+        console.log(plan[0]);
+        console.log(plan[1]);
         let newOption = document.createElement("option");
         
         // set up new option before appending
