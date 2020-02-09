@@ -9,6 +9,7 @@ function mealPlanRequest()
             let data = JSON.parse(request.response);
             console.log(data);
 
+            const mealPlanName = document.getElementById("mealPlanNameInput").value = data[0];
             const monday    = document.getElementById("mondayInner");
             const tuesday   = document.getElementById("tuesdayInner");
             const wednesday = document.getElementById("wednesdayInner");
