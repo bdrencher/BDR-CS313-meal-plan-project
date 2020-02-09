@@ -1,5 +1,6 @@
-function mealPlanRequest(mealPlanID)
+function mealPlanRequest()
 {
+    const mealPlanID = document.getElementById("mealPlanSelection").value;
     let request = new XMLHttpRequest();
 
     request.onreadystatechange = function() {
