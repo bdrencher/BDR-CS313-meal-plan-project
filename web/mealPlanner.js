@@ -14,6 +14,7 @@ function mealPlanRequest(mealPlanID)
     request.send();
 }
 
+$(document).ready(
 function getAllMealPlans()
 {
     let request = new XMLHttpRequest();
@@ -22,31 +23,25 @@ function getAllMealPlans()
         if(this.readyState == 4 && this.status == 200)
         {
             let data = JSON.parse(request.response);
-            return data;
+            
+            // modify drop down menu with values
+            const dropDown = document.getElementById("mealPlanSelection");
+
+            for (const plan of data) {
+                console.log(plan);
+                console.log(plan[0]);
+                console.log(plan[1]);
+                let newOption = document.createElement("option");
+                
+                // set up new option before appending
+                newOption.setAttribute("value", plan[0]);
+                newOption.innerHTML = plan[1];
+        
+                dropDown.appendChild(newOption);
+            }
         }
     };
 
     request.open("GET", "getAllMealPlans.php", true);
     request.send();
-}
-
-$(document).ready(
-function populateMealPlans()
-{
-    const dropDown = document.getElementById("mealPlanSelection");
-    const mealPlans = getAllMealPlans();
-
-    // plan[0] should be meal plan id, plan[1] should be meal plan name
-    for (const plan of mealPlans) {
-        console.log(plan);
-        console.log(plan[0]);
-        console.log(plan[1]);
-        let newOption = document.createElement("option");
-        
-        // set up new option before appending
-        newOption.setAttribute("value", plan[0]);
-        newOption.innerHTML = plan[1];
-
-        dropDown.appendChild(newOption);
-    }
 });
