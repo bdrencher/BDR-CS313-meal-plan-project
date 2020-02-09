@@ -7,7 +7,6 @@ function mealPlanRequest()
         if(this.readyState == 4 && this.status == 200)
         {
             let data = JSON.parse(request.response);
-            console.log(data);
 
             const mealPlanName = document.getElementById("mealPlanNameInput").value = data[0];
             const monday    = document.getElementById("mondayInner");
