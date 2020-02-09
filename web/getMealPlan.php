@@ -42,13 +42,13 @@ $saturday     = $mealPlanData['saturday'];
 $sunday       = $mealPlanData['sunday'];
 
 // I want to come back and write a more oop solution for this
-$mondayQuery = $db->prepare('SELECT name, recipe_url, servings, prep_time FROM meals WHERE id=$monday');
-$tuesdayQuery = $db->prepare('SELECT name, recipe_url, servings, prep_time FROM meals WHERE id=$tuesday');
-$wednesdayQuery = $db->prepare('SELECT name, recipe_url, servings, prep_time FROM meals WHERE id=$wednesday');
-$thursdayQuery = $db->prepare('SELECT name, recipe_url, servings, prep_time FROM meals WHERE id=$thursday');
-$fridayQuery = $db->prepare('SELECT name, recipe_url, servings, prep_time FROM meals WHERE id=$friday');
-$saturdayQuery = $db->prepare('SELECT name, recipe_url, servings, prep_time FROM meals WHERE id=$saturday');
-$sundayQuery = $db->prepare('SELECT name, recipe_url, servings, prep_time FROM meals WHERE id=$sunday');
+$mondayQuery    = $db->prepare("SELECT name, recipe_url, servings, prep_time FROM meals WHERE id=$monday");
+$tuesdayQuery   = $db->prepare("SELECT name, recipe_url, servings, prep_time FROM meals WHERE id=$tuesday");
+$wednesdayQuery = $db->prepare("SELECT name, recipe_url, servings, prep_time FROM meals WHERE id=$wednesday");
+$thursdayQuery  = $db->prepare("SELECT name, recipe_url, servings, prep_time FROM meals WHERE id=$thursday");
+$fridayQuery    = $db->prepare("SELECT name, recipe_url, servings, prep_time FROM meals WHERE id=$friday");
+$saturdayQuery  = $db->prepare("SELECT name, recipe_url, servings, prep_time FROM meals WHERE id=$saturday");
+$sundayQuery    = $db->prepare("SELECT name, recipe_url, servings, prep_time FROM meals WHERE id=$sunday");
 
 $mondayQuery->execute();
 $tuesdayQuery->execute();
@@ -58,13 +58,13 @@ $fridayQuery->execute();
 $saturdayQuery->execute();
 $sundayQuery->execute();
 
-$mondayData = $mondayQuery->fetchall(PDO::FETCH_ASSOC);
-$tuesdayData = $tuesdayQuery->fetchall(PDO::FETCH_ASSOC);
+$mondayData    = $mondayQuery->fetchall(PDO::FETCH_ASSOC);
+$tuesdayData   = $tuesdayQuery->fetchall(PDO::FETCH_ASSOC);
 $wednesdayData = $wednesdayQuery->fetchall(PDO::FETCH_ASSOC);
-$thursdayData = $thursdayQuery->fetchall(PDO::FETCH_ASSOC);
-$fridayData = $fridayQuery->fetchall(PDO::FETCH_ASSOC);
-$saturdayData = $saturdayQuery->fetchall(PDO::FETCH_ASSOC);
-$sundayData = $sundayQuery->fetchall(PDO::FETCH_ASSOC);
+$thursdayData  = $thursdayQuery->fetchall(PDO::FETCH_ASSOC);
+$fridayData    = $fridayQuery->fetchall(PDO::FETCH_ASSOC);
+$saturdayData  = $saturdayQuery->fetchall(PDO::FETCH_ASSOC);
+$sundayData    = $sundayQuery->fetchall(PDO::FETCH_ASSOC);
 
 // send data to front end
 $mealPlanArray = array($mealPlanName, $mondayData, $tuesdayData, $wednesdayData, $thursdayData, $fridayData, $saturdayData, $sundayData);
