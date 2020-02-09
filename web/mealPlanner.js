@@ -11,7 +11,7 @@ function mealPlanRequest()
 
             const monday    = document.getElementById("mondayInner");
             const tuesday   = document.getElementById("tuesdayInner");
-            const wednesday = document.getElementById("wednesday");
+            const wednesday = document.getElementById("wednesdayInner");
             const thursday  = document.getElementById("thursdayInner");
             const friday    = document.getElementById("fridayInner");
             const saturday  = document.getElementById("saturdayInner");
