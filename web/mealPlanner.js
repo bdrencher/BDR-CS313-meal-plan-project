@@ -28,6 +28,8 @@ function getAllMealPlans()
 
     request.open("GET", "getAllMealPlans.php", true);
     request.send();
+
+    return data;
 }
 
 $(document).ready(
