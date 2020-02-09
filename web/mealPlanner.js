@@ -17,11 +17,12 @@ function mealPlanRequest(mealPlanID)
 function getAllMealPlans()
 {
     let request = new XMLHttpRequest();
+    let data = "An error has occured";
 
     request.onreadystatechange = function() {
         if(this.readyState == 4 && this.status == 200)
         {
-            let data = JSON.parse(request.response);
+            data = JSON.parse(request.response);
             console.log(data);
         }
     };
