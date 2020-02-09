@@ -8,6 +8,32 @@ function mealPlanRequest()
         {
             let data = JSON.parse(request.response);
             console.log(data);
+
+            const monday    = document.getElementById("mondayInner");
+            const tuesday   = document.getElementById("tuesdayInner");
+            const wednesday = document.getElementById("wednesday");
+            const thursday  = document.getElementById("thursdayInner");
+            const friday    = document.getElementById("fridayInner");
+            const saturday  = document.getElementById("saturdayInner");
+            const sunday    = document.getElementById("sundayInner");
+
+            const dayArray = [monday, tuesday, wednesday, thursday, friday, saturday, sunday];
+
+            for (let i = 0; i < 7; i++)
+            {
+                // identify the day and data array that should be accessed
+                const day       = dayArray[i];
+                const dayData   = data[i + 1];
+
+                // collect information for output to screen
+                const name      = dayData[0];
+                const recipeURL = dayData[1];
+                const servings  = dayData[2];
+                const prepTime  = dayData[3];
+                
+                // push data to screen
+                day.innerHTML = "Name: " + name + "<br>recipe: " + recipeURL + "<br>servings: " + servings + "<br>prep time (min): " + prepTime;
+            }
         }
     };
 
@@ -29,9 +55,6 @@ function getAllMealPlans()
             const dropDown = document.getElementById("mealPlanSelection");
 
             for (const plan of data) {
-                console.log(plan);
-                console.log(plan[0]);
-                console.log(plan[1]);
                 let newOption = document.createElement("option");
                 
                 // set up new option before appending
