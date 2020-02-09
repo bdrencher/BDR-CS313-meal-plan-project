@@ -69,5 +69,5 @@ $sundayData = $sundayQuery->fetchall(PDO::FETCH_ASSOC);
 // send data to front end
 $mealPlanArray = array($mealPlanName, $mondayData, $tuesdayData, $wednesdayData, $thursdayData, $fridayData, $saturdayData, $sundayData);
 
-echo json_encode($mealPlanArray);
+echo json_encode($mondayData);
 ?>
