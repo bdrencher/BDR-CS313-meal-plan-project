@@ -79,9 +79,7 @@ function getAMeal(mealID)
     request.onreadystatechange = function() {
         if(this.readyState == 4 && this.status == 200)
         {
-            const data = JSON.parse(request.response);
-
-            return data;
+            return JSON.parse(request.response);
         }
     }
 
