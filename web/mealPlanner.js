@@ -90,6 +90,7 @@ $(document).ready(
                     newRadio.setAttribute("type", "radio");
                     newRadio.setAttribute("name", "meal")
                     newRadio.setAttribute("value", row[0]);
+                    newRadio.innerText = row[1];
 
                     display.appendChild(newRadio);
                 }
