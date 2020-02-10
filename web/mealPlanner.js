@@ -81,6 +81,7 @@ $(document).ready(
             if(this.readyState == 4 && this.status == 200)
             {
                 const data = JSON.parse(request.response);
+                let radioIdModifier = 0;
 
                 const display = document.getElementById("modalContent");
                 
@@ -88,11 +89,19 @@ $(document).ready(
                 {
                     const newRadio = document.createElement("input");
                     newRadio.setAttribute("type", "radio");
-                    newRadio.setAttribute("name", "meal")
+                    newRadio.setAttribute("name", "meal");
+                    newRadio.setAttribute("id", "meal" += radioIdModifier);
                     newRadio.setAttribute("value", row[0]);
-                    newRadio.innerText = row[1];
+                    newRadio.i = row[1];
 
+                    const newLabel = document.createElement("label");
+                    newLabel.setAttribute("for", "meal" += radioIdModifier);
+
+                    const newBreak = document.createElement("br");
+
+                    display.insertBefore(newBreak, display.childNodes[0]);
                     display.insertBefore(newRadio, display.childNodes[0]);
+                    display.insertBefore(newLabel, display.childNodes[0]);
                 }
             }
         }
