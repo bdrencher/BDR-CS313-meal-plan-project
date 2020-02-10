@@ -42,7 +42,6 @@ function mealPlanRequest()
 }
 
 
-
 $(document).ready(
 function getAllMealPlans()
 {
@@ -71,6 +70,24 @@ function getAllMealPlans()
     request.open("GET", "getAllMealPlans.php", true);
     request.send();
 });
+
+// get a single meal
+function getAMeal(mealID)
+{
+    let request = new XMLHttpRequest();
+
+    request.onreadystatechange = function() {
+        if(this.readyState == 4 && this.status == 200)
+        {
+            const data = JSON.parse(request.response);
+
+            return data;
+        }
+    }
+
+    request.open("GET", "getMeal.php?mealID=" + mealID, true);
+    request.send();
+}
 
 // load getAllMeals function on startup
 $(document).ready(getAllMeals())
@@ -116,13 +133,6 @@ function getAllMeals()
     request.send();
 }
 
-function getRadioSelection()
-{
-    // const mealIndex = document.getElementById
-
-    closeModal();
-}
-
 function mealSelector(day)
 {
     const dayBox = document.getElementById(day + 'Inner');
@@ -130,8 +140,23 @@ function mealSelector(day)
     const modal = document.getElementById("mealModal");
 
     selectButton.innerText = "Select meal for " + day;
+    selectButton.onclick = displayMeal(dayBox);
 
     modal.style.display="block";
+}
+
+function displayMeal(day)
+{
+    const selectedMeal = $("input[name=meal]:checked").val();
+
+    const mealData = getAMeal(selectedMeal);
+
+    const name = mealData['name'];
+    const recipeURL = mealData['recipe_url'];
+    const servings = mealData['servings'];
+    const prepTime = mealData['prep_time'];
+
+    day.innerHTML = "Name: " + name + "<br>recipe: " + recipeURL + "<br>servings: " + servings + "<br>prep time (min): " + prepTime;
 }
 
 function closeModal()

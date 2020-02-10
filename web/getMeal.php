@@ -1,5 +1,8 @@
 <?php
-function getMeal($mealID, $db)
+require 'connectToDB.php';
+$db = returnDB();
+
+function getMeal($mealID)
 {
     if($mealID == NULL)
     {
