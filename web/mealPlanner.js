@@ -102,6 +102,7 @@ $(document).ready(
                     display.insertBefore(newBreak, display.childNodes[0]);
                     display.insertBefore(newRadio, display.childNodes[0]);
                     display.insertBefore(newLabel, display.childNodes[0]);
+                    radioIdModifier++;
                 }
             }
         }
