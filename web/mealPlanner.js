@@ -72,18 +72,26 @@ function getAllMealPlans()
 });
 
 // get a single meal
-function getAMeal(mealID)
+function getAMeal(day)
 {
+    const selectedMeal = $("input[name=meal]:checked").val();
     let request = new XMLHttpRequest();
 
     request.onreadystatechange = function() {
         if(this.readyState == 4 && this.status == 200)
         {
-            return JSON.parse(request.response);
+            let mealData = JSON.parse(request.response);
+
+            const name = mealData['name'];
+            const recipeURL = mealData['recipe_url'];
+            const servings = mealData['servings'];
+            const prepTime = mealData['prep_time'];
+        
+            day.innerHTML = "Name: " + name + "<br>recipe: " + recipeURL + "<br>servings: " + servings + "<br>prep time (min): " + prepTime;
         }
     }
 
-    request.open("GET", "returnMeal.php?mealID=" + mealID, true);
+    request.open("GET", "returnMeal.php?mealID=" + selectedMeal, true);
     request.send();
 }
 
@@ -138,26 +146,9 @@ function mealSelector(day)
     const modal = document.getElementById("mealModal");
 
     selectButton.innerText = "Select meal for " + day;
-    selectButton.onclick = function() {displayMeal(dayBox);};
+    selectButton.onclick = function() {getAMeal(dayBox);};
 
     modal.style.display="block";
-}
-
-function displayMeal(day)
-{
-    const selectedMeal = $("input[name=meal]:checked").val();
-    console.log(selectedMeal);
-
-    console.log(getAMeal(selectedMeal));
-    const mealData = getAMeal(selectedMeal);
-    console.log(mealData);
-
-    const name = mealData['name'];
-    const recipeURL = mealData['recipe_url'];
-    const servings = mealData['servings'];
-    const prepTime = mealData['prep_time'];
-
-    day.innerHTML = "Name: " + name + "<br>recipe: " + recipeURL + "<br>servings: " + servings + "<br>prep time (min): " + prepTime;
 }
 
 function closeModal()
