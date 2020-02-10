@@ -13,13 +13,13 @@ $mealPlanData = $query->fetch(PDO::FETCH_ASSOC);
 
 // get data for each meal
 $mealPlanName = $mealPlanData['name'];
-$monday       = getMeal($mealPlanData['monday']);
-$tuesday      = getMeal($mealPlanData['tuesday']);
-$wednesday    = getMeal($mealPlanData['wednesday']);
-$thursday     = getMeal($mealPlanData['thursday']);
-$friday       = getMeal($mealPlanData['friday']);
-$saturday     = getMeal($mealPlanData['saturday']);
-$sunday       = getMeal($mealPlanData['sunday']);
+$monday       = getMeal($mealPlanData['monday'], $db);
+$tuesday      = getMeal($mealPlanData['tuesday'], $db);
+$wednesday    = getMeal($mealPlanData['wednesday'], $db);
+$thursday     = getMeal($mealPlanData['thursday'], $db);
+$friday       = getMeal($mealPlanData['friday'], $db);
+$saturday     = getMeal($mealPlanData['saturday'], $db);
+$sunday       = getMeal($mealPlanData['sunday'], $db);
 
 $mealPlanArray = array($mealPlanName, $monday, $tuesday, $wednesday, $thursday, $friday, $saturday, $sunday);
 echo json_encode($mealPlanArray);
