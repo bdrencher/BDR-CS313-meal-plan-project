@@ -81,6 +81,7 @@ function getAMeal(day)
         if(this.readyState == 4 && this.status == 200)
         {
             let mealData = JSON.parse(request.response);
+            console.log(mealData);
 
             const name = mealData['name'];
             const recipeURL = mealData['recipe_url'];
