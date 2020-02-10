@@ -81,7 +81,6 @@ $(document).ready(
             if(this.readyState == 4 && this.status == 200)
             {
                 const data = JSON.parse(request.response);
-                console.log(data);
             }
         }
 
@@ -89,3 +88,9 @@ $(document).ready(
         request.send();
     }
 )
+
+function mealSelector(day)
+{
+    const dayBox = document.getElementById(day);
+    dayBox.innerHTML = "THIS IS A TEST";
+}
