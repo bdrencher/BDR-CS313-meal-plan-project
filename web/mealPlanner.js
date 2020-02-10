@@ -81,6 +81,16 @@ $(document).ready(
             if(this.readyState == 4 && this.status == 200)
             {
                 const data = JSON.parse(request.response);
+
+                const display = document.getElementById("modalContent");
+                
+                for(const row of data)
+                {
+                    const newRadio = document.createElement("input");
+                    newRadio.setAttribute("type", "radio");
+                    newRadio.setAttribute("name", "meal")
+                    newRadio.setAttribute("value", row[0]);
+                }
             }
         }
 
