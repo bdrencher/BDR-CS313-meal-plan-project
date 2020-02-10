@@ -85,7 +85,7 @@ function getAMeal(mealID)
         }
     }
 
-    request.open("GET", "getMeal.php?mealID=" + mealID, true);
+    request.open("GET", "returnMeal.php?mealID=" + mealID, true);
     request.send();
 }
 
