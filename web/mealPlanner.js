@@ -86,15 +86,13 @@ $(document).ready(
                 
                 for(const row of data)
                 {
-                    console.log(row[0]);
-                    console.log(row[1]);
                     const newRadio = document.createElement("input");
                     newRadio.setAttribute("type", "radio");
                     newRadio.setAttribute("name", "meal")
                     newRadio.setAttribute("value", row[0]);
                     newRadio.innerText = row[1];
 
-                    display.appendChild(newRadio);
+                    display.insertBefore(newRadio, display.childNodes[0]);
                 }
             }
         }
@@ -103,6 +101,11 @@ $(document).ready(
         request.send();
     }
 )
+
+function getRadioSelection()
+{
+    const mealIndex = document.getElement
+}
 
 function mealSelector(day)
 {
