@@ -80,7 +80,7 @@ function getAMeal(day)
     request.onreadystatechange = function() {
         if(this.readyState == 4 && this.status == 200)
         {
-            let mealData = JSON.parse(request.response);
+            let mealData = JSON.parse(request.response)[0];
             console.log(mealData);
 
             const name = mealData['name'];
