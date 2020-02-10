@@ -140,7 +140,7 @@ function mealSelector(day)
     const modal = document.getElementById("mealModal");
 
     selectButton.innerText = "Select meal for " + day;
-    selectButton.setAttribute("onclick", function () {displayMeal(dayBox)});
+    selectButton.onclick = function() {displayMeal(dayBox);};
 
     modal.style.display="block";
 }
