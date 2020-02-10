@@ -98,6 +98,7 @@ $(document).ready(
 
                     const newLabel = document.createElement("label");
                     newLabel.setAttribute("for", newID);
+                    newLabel.innerText = row[1];
 
                     const newBreak = document.createElement("br");
 
