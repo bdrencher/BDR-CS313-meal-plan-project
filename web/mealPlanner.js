@@ -118,11 +118,21 @@ function getAllMeals()
 
 function getRadioSelection()
 {
-    const mealIndex = document.getElement
+    // const mealIndex = document.getElementById
+
+    closeModal();
 }
 
 function mealSelector(day)
 {
     const dayBox = document.getElementById(day + 'Inner');
-    dayBox.innerHTML = "THIS IS A TEST";
+    const selectButton = document.getElementById("mealSelectButton");
+    const modal = document.getElementById("mealModal");
+
+    modal.style.display="block";
+}
+
+function closeModal()
+{
+    document.getElementById("mealModal").style.display = "none";
 }

@@ -72,3 +72,9 @@ header h1{
 .labelAndDay {
     align-content: center;
 }
+
+#mealModal {
+    display: none;
+    position: fixed;
+    z-index: 1;
+}
