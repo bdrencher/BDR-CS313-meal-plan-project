@@ -86,6 +86,8 @@ $(document).ready(
                 
                 for(const row of data)
                 {
+                    console.log(row[0]);
+                    console.log(row[1]);
                     const newRadio = document.createElement("input");
                     newRadio.setAttribute("type", "radio");
                     newRadio.setAttribute("name", "meal")
