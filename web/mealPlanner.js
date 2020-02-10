@@ -150,6 +150,7 @@ function displayMeal(day)
     const selectedMeal = $("input[name=meal]:checked").val();
     console.log(selectedMeal);
 
+    console.log(getAMeal(selectedMeal));
     const mealData = getAMeal(selectedMeal);
     console.log(mealData);
 
