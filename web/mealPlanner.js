@@ -90,6 +90,8 @@ $(document).ready(
                     newRadio.setAttribute("type", "radio");
                     newRadio.setAttribute("name", "meal")
                     newRadio.setAttribute("value", row[0]);
+
+                    display.appendChild(newRadio);
                 }
             }
         }
