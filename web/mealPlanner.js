@@ -150,7 +150,8 @@ function displayMeal(day)
     const selectedMeal = $("input[name=meal]:checked").val();
     console.log(selectedMeal);
 
-    const mealData = JSON.parse(getAMeal(selectedMeal));
+    const mealData = getAMeal(selectedMeal);
+    console.log(mealData);
 
     const name = mealData['name'];
     const recipeURL = mealData['recipe_url'];
