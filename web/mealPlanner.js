@@ -87,15 +87,17 @@ $(document).ready(
                 
                 for(const row of data)
                 {
+                    const newID = "meal" += radioIdModifier;
+
                     const newRadio = document.createElement("input");
                     newRadio.setAttribute("type", "radio");
                     newRadio.setAttribute("name", "meal");
-                    newRadio.setAttribute("id", "meal" += radioIdModifier);
+                    newRadio.setAttribute("id", newID);
                     newRadio.setAttribute("value", row[0]);
                     newRadio.i = row[1];
 
                     const newLabel = document.createElement("label");
-                    newLabel.setAttribute("for", "meal" += radioIdModifier);
+                    newLabel.setAttribute("for", newID);
 
                     const newBreak = document.createElement("br");
 
