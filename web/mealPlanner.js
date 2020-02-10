@@ -72,48 +72,49 @@ function getAllMealPlans()
     request.send();
 });
 
-$(document).ready(
-    function getAllMeals()
-    {
-        let request = new XMLHttpRequest();
+// load getAllMeals function on startup
+$(document).ready(getAllMeals())
 
-        request.onreadystatechange = function() {
-            if(this.readyState == 4 && this.status == 200)
+function getAllMeals()
+{
+    let request = new XMLHttpRequest();
+
+    request.onreadystatechange = function() {
+        if(this.readyState == 4 && this.status == 200)
+        {
+            const data = JSON.parse(request.response);
+            let radioIdModifier = 0;
+
+            const display = document.getElementById("modalContent");
+            
+            for(const row of data)
             {
-                const data = JSON.parse(request.response);
-                let radioIdModifier = 0;
+                const newID = "meal" + radioIdModifier;
 
-                const display = document.getElementById("modalContent");
-                
-                for(const row of data)
-                {
-                    const newID = "meal" + radioIdModifier;
+                const newRadio = document.createElement("input");
+                newRadio.setAttribute("type", "radio");
+                newRadio.setAttribute("name", "meal");
+                newRadio.setAttribute("id", newID);
+                newRadio.setAttribute("value", row[0]);
+                newRadio.i = row[1];
 
-                    const newRadio = document.createElement("input");
-                    newRadio.setAttribute("type", "radio");
-                    newRadio.setAttribute("name", "meal");
-                    newRadio.setAttribute("id", newID);
-                    newRadio.setAttribute("value", row[0]);
-                    newRadio.i = row[1];
+                const newLabel = document.createElement("label");
+                newLabel.setAttribute("for", newID);
+                newLabel.innerText = row[1];
 
-                    const newLabel = document.createElement("label");
-                    newLabel.setAttribute("for", newID);
-                    newLabel.innerText = row[1];
+                const newBreak = document.createElement("br");
 
-                    const newBreak = document.createElement("br");
-
-                    display.insertBefore(newBreak, display.childNodes[0]);
-                    display.insertBefore(newRadio, display.childNodes[0]);
-                    display.insertBefore(newLabel, display.childNodes[0]);
-                    radioIdModifier++;
-                }
+                display.insertBefore(newBreak, display.childNodes[0]);
+                display.insertBefore(newRadio, display.childNodes[0]);
+                display.insertBefore(newLabel, display.childNodes[0]);
+                radioIdModifier++;
             }
         }
-
-        request.open("GET", "getAllMeals.php", true);
-        request.send();
     }
-)
+
+    request.open("GET", "getAllMeals.php", true);
+    request.send();
+}
 
 function getRadioSelection()
 {
