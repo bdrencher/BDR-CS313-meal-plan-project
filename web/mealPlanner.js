@@ -91,6 +91,6 @@ $(document).ready(
 
 function mealSelector(day)
 {
-    const dayBox = document.getElementById(day);
+    const dayBox = document.getElementById(day + 'Inner');
     dayBox.innerHTML = "THIS IS A TEST";
 }
