@@ -129,6 +129,8 @@ function mealSelector(day)
     const selectButton = document.getElementById("mealSelectButton");
     const modal = document.getElementById("mealModal");
 
+    selectButton.innerText = "Select meal for " + day;
+
     modal.style.display="block";
 }
 
