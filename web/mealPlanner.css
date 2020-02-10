@@ -75,6 +75,18 @@ header h1{
 
 #mealModal {
     display: none;
-    position: fixed;
+    position: relative;
     z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+}
+
+#modalContent {
+    margin: 10% auto;
+    padding: 10px;
+    border: 5px solid lightblue;
+    width: 70%;
 }
