@@ -41,6 +41,8 @@ function mealPlanRequest()
     request.send();
 }
 
+
+
 $(document).ready(
 function getAllMealPlans()
 {
@@ -69,3 +71,21 @@ function getAllMealPlans()
     request.open("GET", "getAllMealPlans.php", true);
     request.send();
 });
+
+$(document).ready(
+    function getAllMeals()
+    {
+        let request = new XMLHttpRequest();
+
+        request.onreadystatechange = function() {
+            if(this.readyState == 4 && this.status == 200)
+            {
+                const data = JSON.parse(request.response);
+                console.log(data);
+            }
+        }
+
+        request.open("GET", "getAllMeals.php", true);
+        request.send();
+    }
+)
