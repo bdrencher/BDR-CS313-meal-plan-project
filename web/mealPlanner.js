@@ -81,7 +81,6 @@ function getAMeal(day)
         if(this.readyState == 4 && this.status == 200)
         {
             let mealData = JSON.parse(request.response)[0];
-            console.log(mealData);
 
             const name = mealData['name'];
             const recipeURL = mealData['recipe_url'];
@@ -89,7 +88,7 @@ function getAMeal(day)
             const prepTime = mealData['prep_time'];
         
             day.innerHTML = "Name: " + name + "<br>recipe: " + recipeURL + "<br>servings: " + servings + "<br>prep time (min): " + prepTime;
-
+            $('input[name=meal]').attr('checked',false); // uncheck radio buttons
             closeModal();
         }
     }
