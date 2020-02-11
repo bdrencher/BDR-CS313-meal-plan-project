@@ -1,3 +1,4 @@
+// ---------- GETTING MEALS AND MEAL PLANS -----------
 function mealPlanRequest()
 {
     const mealPlanID = document.getElementById("mealPlanSelection").value;
@@ -155,4 +156,19 @@ function mealSelector(day)
 function closeModal()
 {
     document.getElementById("mealModal").style.display = "none";
+}
+
+// ------------ ADDING MEALS AND MEAL PLANS --------------
+function addAMeal()
+{
+    // not sure if I need to set these to null or not
+    let name = document.getElementById("name").textContent;
+    let servings = document.getElementById("servings").textContent;
+    let prepTime = document.getElementById("prepTime").textContent;
+    let recipeURL = document.getElementById("url").textContent;
+    
+    let request = new XMLHttpRequest();
+
+    request.open("POST", "addAMeal.php?name=" + name + "&servings=" + servings + "&prepTime=" + prepTime + "&url=" + recipeURL);
+    request.send();
 }
