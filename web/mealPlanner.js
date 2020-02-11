@@ -162,10 +162,10 @@ function closeModal()
 function addMeal()
 {
     // not sure if I need to set these to null or not
-    let name = document.getElementById("name").textContent;
-    let servings = document.getElementById("servings").textContent;
-    let prepTime = document.getElementById("prepTime").textContent;
-    let recipeURL = document.getElementById("url").textContent;
+    let name      = document.getElementById("name").value;
+    let servings  = document.getElementById("servings").value;
+    let prepTime  = document.getElementById("prepTime").value;
+    let recipeURL = document.getElementById("url").value;
     
     let request = new XMLHttpRequest();
 
