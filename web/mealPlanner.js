@@ -169,6 +169,6 @@ function addMeal()
     
     let request = new XMLHttpRequest();
 
-    request.open("POST", "addAMeal.php?name=" + name + "&servings=" + servings + "&prepTime=" + prepTime + "&url=" + recipeURL);
+    request.open("POST", "addMeal.php?name=" + name + "&servings=" + servings + "&prepTime=" + prepTime + "&url=" + recipeURL);
     request.send();
 }
