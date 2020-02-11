@@ -88,7 +88,6 @@ function getAMeal(day)
             const prepTime = mealData['prep_time'];
         
             day.innerHTML = "Name: " + name + "<br>recipe: " + recipeURL + "<br>servings: " + servings + "<br>prep time (min): " + prepTime;
-            $('input[name=meal]').attr('checked',false); // uncheck radio buttons
             closeModal();
         }
     }
