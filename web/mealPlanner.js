@@ -159,7 +159,7 @@ function closeModal()
 }
 
 // ------------ ADDING MEALS AND MEAL PLANS --------------
-function addAMeal()
+function addMeal()
 {
     // not sure if I need to set these to null or not
     let name = document.getElementById("name").textContent;
