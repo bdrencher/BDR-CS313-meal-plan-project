@@ -167,14 +167,19 @@ function addMeal()
     let prepTime  = document.getElementById("prepTime").value;
     let recipeURL = document.getElementById("url").value;
 
-    document.getElementById("name").value = "";
-    document.getElementById("servings").value = "";
-    document.getElementById("prepTime").value = "";
-    document.getElementById("url").value = "";
+    clearAddMeal();
     
     $.ajax({
         type: "POST",
         url: "addMeal.php",
         data: { name: name, servings: servings, prepTime: prepTime, url: recipeURL }
     });
+}
+
+function clearAddMeal()
+{
+    document.getElementById("name").value = "";
+    document.getElementById("servings").value = "";
+    document.getElementById("prepTime").value = "";
+    document.getElementById("url").value = "";
 }
