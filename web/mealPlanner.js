@@ -167,8 +167,9 @@ function addMeal()
     let prepTime  = document.getElementById("prepTime").value;
     let recipeURL = document.getElementById("url").value;
     
-    let request = new XMLHttpRequest();
-
-    request.open("POST", "addMeal.php", true);
-    request.send("name="+ name + "&servings=" + servings + "&prepTime=" + prepTime + "&url=" + recipeURL);
+    $.ajax({
+        type: "POST",
+        url: "addMeal.php",
+        data: { name: name, servings: servings, prepTime: prepTime, url: recipeURL }
+    });
 }
