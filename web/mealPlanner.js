@@ -186,5 +186,10 @@ function clearAddMeal()
 
 function clearMealPlan()
 {
-    document.getElementsByClassName("mealBoxText").innerText = "";
+    const mealBoxTexts = document.getElementsByClassName("mealBoxText");
+
+    for(p of mealBoxTexts)
+    {
+        p.innerText="";
+    }
 }
