@@ -2,6 +2,14 @@
 require "connectToDB.php";
 $db = returnDB();
 
+$query = 'INSERT INTO meals (name, recipe_url, servings, prep_time) VALUES(:name, :url, :servings, :time)';
+$statement = $db->prepare($query);
+
+$statement->bindValue(':name', $name);
+$statement->bindValue(':url', $url);
+$statement->bindValue(':servings', $servings);
+$statement->bindValue(':time', $time);
+
 if(isset($_POST['name'])){
     $name = $_POST['name'];
 }
@@ -20,14 +28,6 @@ if(isset($_POST['url']))
 {
     $url = $_POST['url'];
 }
-
-$query = 'INSERT INTO meals (name, recipe_url, servings, prep_time) VALUES(:name, :url, :servings, :time)';
-$statement = $db->prepare($query);
-
-$statement->bindValue(':name', $name);
-$statement->bindValue(':url', $url);
-$statement->bindValue(':servings', $servings);
-$statement->bindValue(':time', $time);
 
 $statement->execute();
 
