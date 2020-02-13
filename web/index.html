@@ -51,46 +51,47 @@
             <div class="labelAndDay">
                 <p>Monday</p>
                 <div id="monday" class="mealBox" onclick="mealSelector('monday')">
-                    <p id="mondayInner"></p>
+                    <p id="mondayInner" class="mealBoxText"></p>
                 </div>
             </div>
             <div class="labelAndDay">
             <p>Tuesday</p>
                 <div id="tuesday" class="mealBox" onclick="mealSelector('tuesday')">
-                    <p id="tuesdayInner"></p>
+                    <p id="tuesdayInner" class="mealBoxText"></p>
                 </div>
             </div>
             <div class="labelAndDay">
             <p>Wednesday</p>
                 <div id="wednesday" class="mealBox" onclick="mealSelector('wednesday')">
-                    <p id="wednesdayInner"></p>
+                    <p id="wednesdayInner" class="mealBoxText"></p>
                 </div>
             </div>
             <div class="labelAndDay">
             <p>Thursday</p>
                 <div id="thursday" class="mealBox" onclick="mealSelector('thursday')">
-                    <p id="thursdayInner"></p>
+                    <p id="thursdayInner" class="mealBoxText"></p>
                 </div>
             </div>
             <div class="labelAndDay">
             <p>Friday</p>
                 <div id="friday" class="mealBox" onclick="mealSelector('friday')">
-                    <p id="fridayInner"></p>
+                    <p id="fridayInner" class="mealBoxText"></p>
                 </div>
             </div>
             <div class="labelAndDay">
             <p>Saturday</p>
                 <div id="saturday" class="mealBox" onclick="mealSelector('saturday')">
-                    <p id="saturdayInner"></p>
+                    <p id="saturdayInner" class="mealBoxText"></p>
                 </div>
             </div>
             <div class="labelAndDay">
             <p>Sunday</p>
                 <div id="sunday" class="mealBox" onclick="mealSelector('sunday')">
-                    <p id="sundayInner"></p>
+                    <p id="sundayInner" class="mealBoxText"></p>
                 </div>
             </div>
             <div id="mealPlanButtons">
+                <button onclick="clearMealPlan()">Clear meal plan</button>
                 <button id="saveMealPlanButton" onclick="saveMealPlan()">Save meal plan</button>
                 <button id="randomizeMealPlanButton" onclick="generateRandomPlan()">Generate random meal plan</button>
                 <label for="mealPlanSelection">Select a meal plan:</label>

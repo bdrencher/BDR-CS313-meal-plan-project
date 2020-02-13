@@ -183,3 +183,8 @@ function clearAddMeal()
     document.getElementById("prepTime").value = "";
     document.getElementById("url").value = "";
 }
+
+function clearMealPlan()
+{
+    document.getElementsByClassName("mealBoxText").innerText = "";
+}
