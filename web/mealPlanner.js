@@ -166,6 +166,11 @@ function addMeal()
     let servings  = document.getElementById("servings").value;
     let prepTime  = document.getElementById("prepTime").value;
     let recipeURL = document.getElementById("url").value;
+
+    document.getElementById("name").value = "";
+    document.getElementById("servings").value = "";
+    document.getElementById("prepTime").value = "";
+    document.getElementById("url").value = "";
     
     $.ajax({
         type: "POST",
