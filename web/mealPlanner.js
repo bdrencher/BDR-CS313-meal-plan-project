@@ -10,6 +10,8 @@ function mealPlanRequest()
             let data = JSON.parse(request.response);
 
             const mealPlanName = document.getElementById("mealPlanNameInput").value = data[0];
+            localStorage.setItem("mealPlanName", mealPlanName);
+
             const monday    = document.getElementById("mondayInner");
             const tuesday   = document.getElementById("tuesdayInner");
             const wednesday = document.getElementById("wednesdayInner");
