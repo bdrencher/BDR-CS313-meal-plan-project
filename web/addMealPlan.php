@@ -9,15 +9,15 @@ $dataArray = json_decode($_POST['dataArray']);
 // the second is the meal id
 
 $mealPlanName   = $dataArray[0];
-$mondayID       = $dataArray[1]['id'];
-$tuesdayID      = $dataArray[2]['id'];
-$wednesdayID    = $dataArray[3]['id'];
-$thursdayID     = $dataArray[4]['id'];
-$fridayID       = $dataArray[5]['id'];
-$saturdayID     = $dataArray[6]['id'];
-$sundayID       = $dataArray[7]['id'];
+$mondayID       = json_decode($dataArray[1][1]);
+$tuesdayID      = json_decode($dataArray[2][1]);
+$wednesdayID    = json_decode($dataArray[3][1]);
+$thursdayID     = json_decode($dataArray[4][1]);
+$fridayID       = json_decode($dataArray[5][1]);
+$saturdayID     = json_decode($dataArray[6][1]);
+$sundayID       = json_decode($dataArray[7][1]);
 
-var_dump($dataArray);
+var_dump($mondayID);
 
 $query = 'INSERT INTO meal_plans (name, monday, tuesday, wednesday, thursday, friday, saturday, sunday) 
 VALUES (:planName, :mondayID, :tuesdayID, :wednesdayID, :thursdayID, :fridayID, :saturdayID, :sundayID)';
