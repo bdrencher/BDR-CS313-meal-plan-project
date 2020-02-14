@@ -23,13 +23,13 @@ VALUES (:planName, :mondayID, :tuesdayID, :wednesdayID, :thursdayID, :fridayID, 
 $statement = $db->prepare($query);
 
 $statement->bindValue(':planName', $mealPlanName);
-$statement->bindValue(':mondayID', $mondayID);
-$statement->bindValue(':tuesdayID', $tuesdayID);
-$statement->bindValue(':wednesdayID', $wednesdayID);
-$statement->bindValue(':thursdayID', $thursdayID);
-$statement->bindValue(':fridayID', $fridayID);
-$statement->bindValue(':saturdayID', $saturdayID);
-$statement->bindValue(':sundayID', $sundayID);
+$statement->bindParam(':mondayID', $mondayID, PDO::PARAM_INT);
+$statement->bindParam(':tuesdayID', $tuesdayID, PDO::PARAM_INT);
+$statement->bindParam(':wednesdayID', $wednesdayID, PDO::PARAM_INT);
+$statement->bindParam(':thursdayID', $thursdayID, PDO::PARAM_INT);
+$statement->bindParam(':fridayID', $fridayID, PDO::PARAM_INT);
+$statement->bindParam(':saturdayID', $saturdayID, PDO::PARAM_INT);
+$statement->bindParam(':sundayID', $sundayID, PDO::PARAM_INT);
 
 $statement->execute();
 
