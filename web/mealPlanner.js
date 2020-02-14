@@ -36,12 +36,10 @@ function mealPlanRequest()
                 const recipeURL = dayData['recipe_url'];
                 const servings  = dayData['servings'];
                 const prepTime  = dayData['prep_time'];
+                const mealID    = dayData['id'];
 
                 dayMealObject['dayName']  = dayName;
-                dayMealObject['mealName'] = name;
-                dayMealObject['url']      = recipeURL;
-                dayMealObject['servings'] = servings;
-                dayMealObject['prepTime'] = prepTime;
+                dayMealObject['id']       = mealID;
 
                 localStorage.setItem(dayName, JSON.stringify(dayMealObject));
                 
@@ -99,15 +97,13 @@ function getAMeal(dayBox, dayName)
         {
             let mealData = JSON.parse(request.response)[0];
 
-            const name = mealData['name'];
+            const name      = mealData['name'];
             const recipeURL = mealData['recipe_url'];
-            const servings = mealData['servings'];
-            const prepTime = mealData['prep_time'];
+            const servings  = mealData['servings'];
+            const prepTime  = mealData['prep_time'];
+            const mealID    = mealData['id'];
 
-            mealDayObject['mealName'] = name;
-            mealDayObject['url']      = recipeURL;
-            mealDayObject['servings'] = servings;
-            mealDayObject['prepTime'] = prepTime;
+            mealDayObject['id'] = mealID;
 
             localStorage.setItem(dayName, JSON.stringify(mealDayObject));
         
