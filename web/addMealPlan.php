@@ -17,6 +17,14 @@ $fridayID       = $dataArray[5][1];
 $saturdayID     = $dataArray[6][1];
 $sundayID       = $dataArray[7][1];
 
+print_r($mondayID);
+print_r($tuesdayID);
+print_r($wednesdayID);
+print_r($thursdayID);
+print_r($fridayID);
+print_r($saturdayID);
+print_r($sundayID);
+
 $query = 'INSERT INTO meal_plans (name, monday, tuesday, wednesday, thursday, friday, saturday, sunday) 
 VALUES (:planName, :mondayID, :tuesdayID, :wednesdayID, :thursdayID, :fridayID, :saturdayID, :sundayID)';
 
