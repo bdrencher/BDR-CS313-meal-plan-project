@@ -19,18 +19,29 @@ function mealPlanRequest()
             const sunday    = document.getElementById("sundayInner");
 
             const dayArray = [monday, tuesday, wednesday, thursday, friday, saturday, sunday];
+            const dayNameArray = ["monday", "tuesday", "wednesday", "thursday", "friday", "saturday", "sunday"];
 
             for (let i = 0; i < 7; i++)
             {
                 // identify the day and data array that should be accessed
                 const day       = dayArray[i];
                 const dayData   = data[i + 1][0];
+                const dayName   = dayNameArray[i];
+                let   dayMealObject = new Object();
 
                 // collect information for output to screen
                 const name      = dayData['name'];
                 const recipeURL = dayData['recipe_url'];
                 const servings  = dayData['servings'];
                 const prepTime  = dayData['prep_time'];
+
+                dayMealObject['dayName']  = dayName;
+                dayMealObject['mealName'] = name;
+                dayMealObject['url']      = recipeURL;
+                dayMealObject['servings'] = servings;
+                dayMealObject['prepTime'] = prepTime;
+
+                localStorage.setItem(dayName, JSON.stringify(dayMealObject));
                 
                 // push data to screen
                 day.innerHTML = "Name: " + name + "<br>recipe: " + recipeURL + "<br>servings: " + servings + "<br>prep time (min): " + prepTime;
