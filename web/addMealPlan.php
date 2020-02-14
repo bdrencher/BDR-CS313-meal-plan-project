@@ -4,5 +4,5 @@ $db = returnDB();
 
 $dataArray = json_decode($_POST['dataArray']);
 
-print($dataArray);
+print_r($dataArray);
 ?>
