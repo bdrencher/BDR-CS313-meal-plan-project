@@ -205,4 +205,6 @@ function clearMealPlan()
     {
         p.innerText="";
     }
+
+    localStorage.clear();
 }
