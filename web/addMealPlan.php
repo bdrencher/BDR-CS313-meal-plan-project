@@ -9,13 +9,13 @@ $dataArray = json_decode($_POST['dataArray']);
 // the second is the meal id
 
 $mealPlanName   = $dataArray[0];
-$mondayID       = json_decode($dataArray[1]['id']);
-$tuesdayID      = json_decode($dataArray[2]['id']);
-$wednesdayID    = json_decode($dataArray[3]['id']);
-$thursdayID     = json_decode($dataArray[4]['id']);
-$fridayID       = json_decode($dataArray[5]['id']);
-$saturdayID     = json_decode($dataArray[6]['id']);
-$sundayID       = json_decode($dataArray[7]['id']);
+$mondayID       = json_decode($dataArray[1]->id);
+$tuesdayID      = json_decode($dataArray[2]->id);
+$wednesdayID    = json_decode($dataArray[3]->id);
+$thursdayID     = json_decode($dataArray[4]->id);
+$fridayID       = json_decode($dataArray[5]->id);
+$saturdayID     = json_decode($dataArray[6]->id);
+$sundayID       = json_decode($dataArray[7]->id);
 
 print_r(json_decode($dataArray[1]));
 print_r($mondayID);
