@@ -203,6 +203,26 @@ function clearAddMeal()
     document.getElementById("url").value = "";
 }
 
+function addMealPlan()
+{
+    const mealPlanName = document.getElementById("mealPlanNameInput").value;
+    const mondayID     = localStorage['monday'];
+    const tuesdayID    = localStorage['tuesday'];
+    const wedesdayID   = localStorage['wednesday'];
+    const thursdayID   = localStorage['thursday'];
+    const fridayID     = localStorage['friday'];
+    const saturdayID   = localStorage['saturday'];
+    const sundayID     = localStorage['sunday'];
+
+    const dataArray = [mealPlanName, mondayID, tuesdayID, wedesdayID, thursdayID, fridayID, saturdayID, sundayID];
+
+    $.ajax({
+        type: "POST",
+        url: "addMealPlan.php",
+        data: { dataArray: JSON.stringify(dataArray) }
+    });
+}
+
 function clearMealPlan()
 {
     const mealBoxTexts = document.getElementsByClassName("mealBoxText");
