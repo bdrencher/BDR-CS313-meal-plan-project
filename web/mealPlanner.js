@@ -221,10 +221,13 @@ function addMealPlan()
         url: "addMealPlan.php",
         data: { dataArray: JSON.stringify(dataArray) }
     });
+
+    clearMealPlan();
 }
 
 function clearMealPlan()
 {
+    document.getElementById("mealPlanNameInput").value = "";
     const mealBoxTexts = document.getElementsByClassName("mealBoxText");
 
     for(p of mealBoxTexts)
