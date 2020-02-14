@@ -86,8 +86,11 @@ function getAllMealPlans()
 });
 
 // get a single meal
-function getAMeal(day)
+function getAMeal(dayBox, dayName)
 {
+    let mealDayObject = new Object(); // prep for storing in local storage
+    mealDayObject['dayName'] = dayName;
+
     const selectedMeal = $("input[name=meal]:checked").val();
     let request = new XMLHttpRequest();
 
@@ -100,8 +103,15 @@ function getAMeal(day)
             const recipeURL = mealData['recipe_url'];
             const servings = mealData['servings'];
             const prepTime = mealData['prep_time'];
+
+            mealDayObject['mealName'] = name;
+            mealDayObject['url']      = recipeURL;
+            mealDayObject['servings'] = servings;
+            mealDayObject['prepTime'] = prepTime;
+
+            localStorage.setItem(dayName, JSON.stringify(mealDayObject));
         
-            day.innerHTML = "Name: " + name + "<br>recipe: " + recipeURL + "<br>servings: " + servings + "<br>prep time (min): " + prepTime;
+            dayBox.innerHTML = "Name: " + name + "<br>recipe: " + recipeURL + "<br>servings: " + servings + "<br>prep time (min): " + prepTime;
             closeModal();
         }
     }
@@ -161,7 +171,7 @@ function mealSelector(day)
     const modal = document.getElementById("mealModal");
 
     selectButton.innerText = "Select meal for " + day;
-    selectButton.onclick = function() {getAMeal(dayBox);};
+    selectButton.onclick = function() {getAMeal(dayBox, day);};
 
     modal.style.display="block";
 }
