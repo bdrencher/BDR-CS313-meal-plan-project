@@ -17,6 +17,9 @@ $fridayID       = json_decode($dataArray[5]['id']);
 $saturdayID     = json_decode($dataArray[6]['id']);
 $sundayID       = json_decode($dataArray[7]['id']);
 
+print_r(json_decode($dataArray[1]));
+print_r($mondayID);
+
 $query = 'INSERT INTO meal_plans (name, monday, tuesday, wednesday, thursday, friday, saturday, sunday) 
 VALUES (:planName, :mondayID, :tuesdayID, :wednesdayID, :thursdayID, :fridayID, :saturdayID, :sundayID)';
 
