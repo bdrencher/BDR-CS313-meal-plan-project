@@ -260,6 +260,7 @@ function generateRandomPlan()
         success: function(data) // data is the response from the php script
         {
             indexArray = JSON.parse(data);
+            console.log(indexArray);
         }
     });
 
