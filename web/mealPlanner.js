@@ -271,15 +271,13 @@ function generateRandomPlan()
     });
 
     let length = indexArray.length;
-    console.log(indexArray);
-    console.log(length);
-    let randomIndexArray = new Array();
 
     for(let i = 0; i < 7; i++)
     {
         // returns a valid index for indexArray
         const randomValue = Math.floor(Math.random() * Math.floor(length));
-        let mealData = new Object();
+        const dayBox = mealBoxArray[i];
+        let mealData = new Array();
         
         $.ajax({
             type: "GET",
@@ -289,9 +287,12 @@ function generateRandomPlan()
             success: function(data)
             {
                 mealData = JSON.parse(data);
-                console.log(mealData);
             }
         });
+
+        localStorage.setItem(dayNameArray[i], indexArray[randomValue]);
+        dayBox.innerHTML = "Name: " + mealData['name'] + "<br>recipe: " + mealData['recipe_url'] + "<br>servings: " + mealData['servings'] + "<br>prep time (min): " + mealData['prep_time'];
+        
     }
 
 
