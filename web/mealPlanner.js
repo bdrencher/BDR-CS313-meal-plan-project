@@ -291,7 +291,7 @@ function generateRandomPlan()
         });
 
         localStorage.setItem(dayNameArray[i], indexArray[randomValue]);
-        dayBox.innerHTML = "Name: " + mealData['name'] + "<br>recipe: " + mealData['recipe_url'] + "<br>servings: " + mealData['servings'] + "<br>prep time (min): " + mealData['prep_time'];
+        dayBox.innerHTML = "Name: " + mealData[0]['name'] + "<br>recipe: " + mealData[0]['recipe_url'] + "<br>servings: " + mealData[0]['servings'] + "<br>prep time (min): " + mealData[0]['prep_time'];
         
     }
 
