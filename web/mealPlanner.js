@@ -129,7 +129,7 @@ function getAllMeals()
             const data = JSON.parse(request.response);
             let radioIdModifier = 0;
 
-            const display = document.getElementById("modalContent");
+            const display = document.getElementById("addMealModalContent");
             
             for(const row of data)
             {
@@ -164,7 +164,7 @@ function mealSelector(day)
 {
     const dayBox = document.getElementById(day + 'Inner');
     const selectButton = document.getElementById("mealSelectButton");
-    const modal = document.getElementById("mealModal");
+    const modal = document.getElementById("addMealModal");
 
     selectButton.innerText = "Select meal for " + day;
     selectButton.onclick = function() {getAMeal(dayBox, day);};
@@ -174,7 +174,7 @@ function mealSelector(day)
 
 function closeModal()
 {
-    document.getElementById("mealModal").style.display = "none";
+    document.getElementById("addMealModal").style.display = "none";
 }
 
 // ------------ ADDING MEALS AND MEAL PLANS --------------
@@ -297,6 +297,15 @@ function generateRandomPlan()
         dayBox.innerHTML = "Name: " + mealData[0]['name'] + "<br>recipe: " + mealData[0]['recipe_url'] + "<br>servings: " + mealData[0]['servings'] + "<br>prep time (min): " + mealData[0]['prep_time'];
         
     }
+}
 
+// -------- DELETE DATA ------------
+function deleteMeal()
+{
+
+}
+
+function deleteMealPlan()
+{
 
 }

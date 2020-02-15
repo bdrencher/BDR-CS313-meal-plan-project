@@ -38,6 +38,7 @@
             </div>
             <button id="addMealButton" onclick="addMeal()">Add</button>
             <button onclick="clearAddMeal()">Clear</button>
+            <button onclick="deleteMeal()">Delete a meal</button>
         </div>
 
         <div id="mealPlanBuilderHeader">
@@ -99,12 +100,20 @@
                     <option value="none">Select a meal plan</option>
                 </select>
                 <button id="loadMealPlanButton" onclick="mealPlanRequest()">Load selected plan</button>
+                <button onclick="deleteMealPlan()">Delete selected plan</button>
             </div>
         </div> <!-- end of gridOfBoxes div -->
 
-        <div id="mealModal">
-            <div id="modalContent">
+        <!-- Meal selection modal -->
+        <div class="mealModal" id="addMealModal">
+            <div class="modalContent" id="addMealModalContent">
                 <button id="mealSelectButton">Select</button>
+            </div>
+        </div>
+        <!-- Meal deletion modal -->
+        <div class="mealModal" id="deleteMealModal">
+            <div class="modalContent" id="deleteMealModalContent">
+                <button id="mealDeleteButton">Delete</button>
             </div>
         </div>
 
