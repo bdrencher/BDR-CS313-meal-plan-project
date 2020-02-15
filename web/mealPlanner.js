@@ -262,7 +262,8 @@ function generateRandomPlan()
             const dataArray = JSON.parse(data);
             for(let i = 0; i < dataArray.length; i++)
             {
-                const value = data[i]['id'];
+                const value = dataArray[i]['id'];
+                console.log(value);
                 indexArray.push(value);
             }
         }
