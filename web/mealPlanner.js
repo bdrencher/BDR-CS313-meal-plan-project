@@ -237,3 +237,51 @@ function clearMealPlan()
 
     localStorage.clear();
 }
+
+// ------------ GENERATING RANDOM PLANS ----------------
+function generateRandomPlan()
+{
+    const monday    = document.getElementById("mondayInner");
+    const tuesday   = document.getElementById("tuesdayInner");
+    const wednesday = document.getElementById("wednesdayInner");
+    const thursday  = document.getElementById("thursdayInner");
+    const friday    = document.getElementById("fridayInner");
+    const saturday  = document.getElementById("saturdayInner");
+    const sunday    = document.getElementById("sundayInner");
+    const mealBoxArray = [monday, tuesday, wednesday, thursday, friday, saturday, sunday];
+
+    const dayNameArray = ['monday', 'tuesday', 'wednesday', 'thursday', 'friday', 'saturday', 'sunday'];
+
+    let indexArray = new Array();
+
+    $.ajax({
+        type: "GET",
+        url: "generateRandomPlan.php",
+        success: function(data) // data is the response from the php script
+        {
+            indexArray = JSON.parse(data);
+        }
+    });
+
+    const length = indexArray.length;
+    let randomIndexArray = new Array();
+
+    for(let i = 0; i < 7; i++)
+    {
+        // returns a valid index for indexArray
+        const randomValue = Math.floor(Math.random() * Math.floor(length));
+        let mealData = new Object();
+        
+        $.ajax({
+            type: "GET",
+            url: "getMealById.php",
+            success: function(data)
+            {
+                mealData = JSON.parse(data);
+                console.log(mealData);
+            }
+        });
+    }
+
+
+}
