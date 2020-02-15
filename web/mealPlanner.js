@@ -264,11 +264,10 @@ function generateRandomPlan()
             {
                 indexArray.push(dataArray[i]['id']);
             }
-            console.log(indexArray);
         }
     });
 
-    const length = indexArray.length;
+    let length = indexArray.length;
     console.log(indexArray);
     console.log(length);
     let randomIndexArray = new Array();
