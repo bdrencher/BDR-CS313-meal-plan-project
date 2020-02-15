@@ -275,6 +275,7 @@ function generateRandomPlan()
         $.ajax({
             type: "GET",
             url: "getMealById.php",
+            data: { planID: randomValue },
             success: function(data)
             {
                 mealData = JSON.parse(data);
