@@ -325,7 +325,7 @@ function deleteMeal()
 
 function deleteMealPlan()
 {
-    const selectedMealPlan = document.getElementById("mealPlanSelector").value;
+    const selectedMealPlan = document.getElementById("mealPlanSelection").value;
 
     $.ajax({
         type: "GET",
