@@ -279,7 +279,7 @@ function generateRandomPlan()
         const dayBox = mealBoxArray[i];
         let mealData = new Array();
         let mealObject = new Object();
-        mealObject['dayName'] = daynameArray[i];
+        mealObject['dayName'] = dayNameArray[i];
         
         $.ajax({
             type: "GET",
