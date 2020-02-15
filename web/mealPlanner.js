@@ -264,6 +264,7 @@ function generateRandomPlan()
     });
 
     const length = indexArray.length;
+    console.log(indexArray);
     console.log(length);
     let randomIndexArray = new Array();
 
