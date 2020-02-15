@@ -252,7 +252,7 @@ function generateRandomPlan()
 
     const dayNameArray = ['monday', 'tuesday', 'wednesday', 'thursday', 'friday', 'saturday', 'sunday'];
 
-    let indexArray = [];
+    let indexArray = new Array(1);
 
     $.ajax({
         type: "GET",
