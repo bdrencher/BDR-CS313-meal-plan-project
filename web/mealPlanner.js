@@ -307,5 +307,11 @@ function deleteMeal()
 
 function deleteMealPlan()
 {
+    const id = document.getElementById("mealPlanSelector").value;
 
+    $.ajax({
+        type: "GET",
+        url: "deleteMealPlan.php",
+        data: { mealPlanID: id }
+    });
 }
