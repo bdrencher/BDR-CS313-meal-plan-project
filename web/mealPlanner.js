@@ -278,6 +278,8 @@ function generateRandomPlan()
         const randomValue = Math.floor(Math.random() * Math.floor(length));
         const dayBox = mealBoxArray[i];
         let mealData = new Array();
+        let mealObject = new Object();
+        mealObject['dayName'] = daynameArray[i];
         
         $.ajax({
             type: "GET",
@@ -290,7 +292,8 @@ function generateRandomPlan()
             }
         });
 
-        localStorage.setItem(dayNameArray[i], indexArray[randomValue]);
+        mealObject['id'] = indexArray[randomValue];
+        localStorage.setItem(dayNameArray[i], JSON.stringify(mealObject));
         dayBox.innerHTML = "Name: " + mealData[0]['name'] + "<br>recipe: " + mealData[0]['recipe_url'] + "<br>servings: " + mealData[0]['servings'] + "<br>prep time (min): " + mealData[0]['prep_time'];
         
     }
