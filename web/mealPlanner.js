@@ -177,6 +177,11 @@ function closeModal()
     document.getElementById("addMealModal").style.display = "none";
 }
 
+function closeDeleteModal()
+{
+    document.getElementById("deleteMealModal").style.display = "none";
+}
+
 // ------------ ADDING MEALS AND MEAL PLANS --------------
 function addMeal()
 {
@@ -300,18 +305,31 @@ function generateRandomPlan()
 }
 
 // -------- DELETE DATA ------------
+function openDeleteMealModal()
+{
+    document.getElementById("deleteMealModal").style.display = "block";
+}
+
 function deleteMeal()
 {
+    const selectedMeal = $("input[name=meal]:checked").val();
 
+    $.ajax({
+        type: "GET",
+        url: "deleteMeal.php",
+        data: { id: selectedMeal }
+    });
+
+    closeDeleteModal();
 }
 
 function deleteMealPlan()
 {
-    const id = document.getElementById("mealPlanSelector").value;
+    const selectedMealPlan = document.getElementById("mealPlanSelector").value;
 
     $.ajax({
         type: "GET",
         url: "deleteMealPlan.php",
-        data: { mealPlanID: id }
+        data: { id: selectedMealPlan }
     });
 }

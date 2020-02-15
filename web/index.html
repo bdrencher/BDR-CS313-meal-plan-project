@@ -38,7 +38,7 @@
             </div>
             <button id="addMealButton" onclick="addMeal()">Add</button>
             <button onclick="clearAddMeal()">Clear</button>
-            <button onclick="deleteMeal()">Delete a meal</button>
+            <button onclick="openDeleteMealModal()">Delete a meal</button>
         </div>
 
         <div id="mealPlanBuilderHeader">
@@ -113,7 +113,7 @@
         <!-- Meal deletion modal -->
         <div class="mealModal" id="deleteMealModal">
             <div class="modalContent" id="deleteMealModalContent">
-                <button id="mealDeleteButton">Delete</button>
+                <button id="mealDeleteButton" onclick="deleteMeal()">Delete</button>
             </div>
         </div>
 
