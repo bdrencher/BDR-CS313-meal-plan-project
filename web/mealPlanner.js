@@ -259,7 +259,11 @@ function generateRandomPlan()
         url: "generateRandomPlan.php",
         success: function(data) // data is the response from the php script
         {
-            indexArray = JSON.parse(data);
+            const dataArray = JSON.parse(data);
+            for(let i = 0; i < dataArray.length; i++)
+            {
+                indexArray.push(dataArray[i]['id]']);
+            }
             console.log(indexArray);
         }
     });
