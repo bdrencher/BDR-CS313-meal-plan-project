@@ -269,6 +269,7 @@ function generateRandomPlan()
 
     let length = indexArray.length;
     console.log(indexArray);
+    console.log(indexArray[0]);
     console.log(length);
     let randomIndexArray = new Array();
 
