@@ -252,11 +252,12 @@ function generateRandomPlan()
 
     const dayNameArray = ['monday', 'tuesday', 'wednesday', 'thursday', 'friday', 'saturday', 'sunday'];
 
-    let indexArray = new Array;
+    let indexArray = new Array();
 
     $.ajax({
         type: "GET",
         url: "generateRandomPlan.php",
+        async: false,
         success: function(data) // data is the response from the php script
         {
             const dataArray = JSON.parse(data);
@@ -271,7 +272,6 @@ function generateRandomPlan()
 
     let length = indexArray.length;
     console.log(indexArray);
-    console.log(indexArray['1']);
     console.log(length);
     let randomIndexArray = new Array();
 
@@ -285,6 +285,7 @@ function generateRandomPlan()
             type: "GET",
             url: "getMealById.php",
             data: { planID: randomValue },
+            async: false,
             success: function(data)
             {
                 mealData = JSON.parse(data);
