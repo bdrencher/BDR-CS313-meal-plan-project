@@ -252,7 +252,7 @@ function generateRandomPlan()
 
     const dayNameArray = ['monday', 'tuesday', 'wednesday', 'thursday', 'friday', 'saturday', 'sunday'];
 
-    let indexArray = new Array(1);
+    
 
     $.ajax({
         type: "GET",
@@ -271,7 +271,7 @@ function generateRandomPlan()
 
     let length = indexArray.length;
     console.log(indexArray);
-    console.log(indexArray[0]);
+    console.log(indexArray['1']);
     console.log(length);
     let randomIndexArray = new Array();
 
