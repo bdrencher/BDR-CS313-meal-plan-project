@@ -129,7 +129,8 @@ function getAllMeals()
             const data = JSON.parse(request.response);
             let radioIdModifier = 0;
 
-            const display = document.getElementById("addMealModalContent");
+            const addDisplay = document.getElementById("addMealModalContent");
+            const deleteDisplay = document.getElementById("deleteMealModalContent")
             
             for(const row of data)
             {
@@ -148,9 +149,13 @@ function getAllMeals()
 
                 const newBreak = document.createElement("br");
 
-                display.insertBefore(newBreak, display.childNodes[0]);
-                display.insertBefore(newRadio, display.childNodes[0]);
-                display.insertBefore(newLabel, display.childNodes[0]);
+                addDisplay.insertBefore(newBreak, addDisplay.childNodes[0]);
+                addDisplay.insertBefore(newRadio, addDisplay.childNodes[0]);
+                addDisplay.insertBefore(newLabel, addDisplay.childNodes[0]);
+
+                deleteDisplay.insertBefore(newBreak, deleteDisplay.childNodes[0]);
+                deleteDisplay.insertBefore(newRadio, deleteDisplay.childNodes[0]);
+                deleteDisplay.insertBefore(newLabel, deleteDisplay.childNodes[0]);
                 radioIdModifier++;
             }
         }
