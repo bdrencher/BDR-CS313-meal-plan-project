@@ -326,7 +326,7 @@ function deleteMeal()
     });
 
     closeDeleteModal();
-    location.reload(false);
+    location.reload(true);
 }
 
 function deleteMealPlan()
