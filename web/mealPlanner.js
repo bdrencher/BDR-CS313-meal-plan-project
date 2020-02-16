@@ -148,13 +148,13 @@ function getAllMeals()
 
                 const newBreak = document.createElement("br");
 
-                addDisplay.insertBefore(newBreak, addDisplay.childNodes[0]);
-                addDisplay.insertBefore(newRadio, addDisplay.childNodes[0]);
-                addDisplay.insertBefore(newLabel, addDisplay.childNodes[0]);
+                addDisplay.insertBefore(newBreak.cloneNode(true), addDisplay.childNodes[0]);
+                addDisplay.insertBefore(newRadio.cloneNode(true), addDisplay.childNodes[0]);
+                addDisplay.insertBefore(newLabel.cloneNode(true), addDisplay.childNodes[0]);
 
-                // deleteDisplay.insertBefore(newBreak, deleteDisplay.childNodes[0]);
-                // deleteDisplay.insertBefore(newRadio, deleteDisplay.childNodes[0]);
-                // deleteDisplay.insertBefore(newLabel, deleteDisplay.childNodes[0]);
+                deleteDisplay.insertBefore(newBreak, deleteDisplay.childNodes[0]);
+                deleteDisplay.insertBefore(newRadio, deleteDisplay.childNodes[0]);
+                deleteDisplay.insertBefore(newLabel, deleteDisplay.childNodes[0]);
                 radioIdModifier++;
             }
         }
