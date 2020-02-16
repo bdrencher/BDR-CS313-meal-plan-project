@@ -141,7 +141,6 @@ function getAllMeals()
                 newRadio.setAttribute("name", "meal");
                 newRadio.setAttribute("id", newID);
                 newRadio.setAttribute("value", row[0]);
-                newRadio.i = row[1];
 
                 const newLabel = document.createElement("label");
                 newLabel.setAttribute("for", newID);
@@ -153,9 +152,9 @@ function getAllMeals()
                 addDisplay.insertBefore(newRadio, addDisplay.childNodes[0]);
                 addDisplay.insertBefore(newLabel, addDisplay.childNodes[0]);
 
-                deleteDisplay.insertBefore(newBreak, deleteDisplay.childNodes[0]);
-                deleteDisplay.insertBefore(newRadio, deleteDisplay.childNodes[0]);
-                deleteDisplay.insertBefore(newLabel, deleteDisplay.childNodes[0]);
+                // deleteDisplay.insertBefore(newBreak, deleteDisplay.childNodes[0]);
+                // deleteDisplay.insertBefore(newRadio, deleteDisplay.childNodes[0]);
+                // deleteDisplay.insertBefore(newLabel, deleteDisplay.childNodes[0]);
                 radioIdModifier++;
             }
         }
